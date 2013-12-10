@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyTimer", "TinyTimer\TinyTimer.csproj", "{A3347567-4D3B-4CAC-BD91-7C4284775086}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3347567-4D3B-4CAC-BD91-7C4284775086}.Debug|x86.ActiveCfg = Debug|x86
+		{A3347567-4D3B-4CAC-BD91-7C4284775086}.Debug|x86.Build.0 = Debug|x86
+		{A3347567-4D3B-4CAC-BD91-7C4284775086}.Release|x86.ActiveCfg = Release|x86
+		{A3347567-4D3B-4CAC-BD91-7C4284775086}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
