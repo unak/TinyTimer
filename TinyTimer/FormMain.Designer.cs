@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTimer = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.soundWorker = new System.ComponentModel.BackgroundWorker();
+            this.tipForm = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // lblTimer
@@ -111,6 +113,7 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnReset;
         private System.ComponentModel.BackgroundWorker soundWorker;
+        private System.Windows.Forms.ToolTip tipForm;
     }
 }
 

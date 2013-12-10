@@ -10,9 +10,11 @@ namespace TinyTimer
     {
         MyTimer timer;
 
-        private bool moving;
+        private bool moving = false;
         private Point startPos;
         private Point lastPos;
+
+        private string title = null;
 
         public FormMain()
         {
@@ -27,6 +29,35 @@ namespace TinyTimer
             });
 
             SetTimerText();
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            const int WM_NCLBUTTONDBLCLK = 0xA3;
+            const int HTCAPTION = 2;
+            if (m.Msg == WM_NCLBUTTONDBLCLK && m.WParam.ToInt32() == HTCAPTION)
+            {
+                var dialog = new FormInputDialog(title);
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    title = dialog.Title;
+                    if (string.IsNullOrEmpty(title))
+                    {
+                        this.Text = "TinyTimer";
+                        title = null;
+                    }
+                    else
+                    {
+                        this.Text = string.Format("{0} - TinyTimer", title);
+                    }
+                    tipForm.SetToolTip(lblTimer, title);
+                }
+                dialog.Dispose();
+            }
+            else
+            {
+                base.WndProc(ref m);
+            }
         }
 
         private void FormMain_KeyPress(object sender, KeyPressEventArgs e)
