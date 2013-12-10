@@ -28,7 +28,7 @@ So you can get TinyTimer\bin\Release\TinyTimer.exe.
 How to Use
 ----------
 
-Input time until alarm begins by numbers key from your keyboard.
+Input time until alarm begins by number keys from your keyboard.
 Then, hit `Enter` key (or push `Start` button) to start the timer.
 You can stop the timer by hitting `Enter` key (or push `Stop` button), or hitting `ESC` key (or push `Reset` button).
 
