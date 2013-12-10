@@ -103,6 +103,8 @@
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.Text = "TinyTimer";
+            this.Activated += new System.EventHandler(this.FormMain_Activated);
+            this.Deactivate += new System.EventHandler(this.FormMain_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FormMain_KeyPress);
             this.ResumeLayout(false);

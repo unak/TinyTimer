@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Media;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace TinyTimer
@@ -68,6 +64,16 @@ namespace TinyTimer
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             soundWorker.CancelAsync();
+        }
+
+        private void FormMain_Activated(object sender, EventArgs e)
+        {
+            lblTimer.BackColor = Color.Yellow;
+        }
+
+        private void FormMain_Deactivate(object sender, EventArgs e)
+        {
+            lblTimer.BackColor = SystemColors.Window;
         }
 
         private void lblTimer_DoubleClick(object sender, EventArgs e)
