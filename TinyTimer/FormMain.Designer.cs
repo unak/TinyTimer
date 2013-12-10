@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lblTimer = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
-            this.timer = new System.Windows.Forms.Timer(this.components);
             this.soundWorker = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
@@ -78,10 +76,6 @@
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // timer
-            // 
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
             // soundWorker
             // 
             this.soundWorker.WorkerSupportsCancellation = true;
@@ -116,7 +110,6 @@
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.Timer timer;
         private System.ComponentModel.BackgroundWorker soundWorker;
     }
 }
