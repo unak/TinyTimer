@@ -36,6 +36,9 @@ If the label of a timer is double-clicked, the timer will become simple display 
 In this mode there is no title bar nor buttons.
 Double-click the label again to return to normal display mode.
 
+By double-clicking the title bar, you can change the contents of it.
+When two or more TinyTimers are started, it becomes easy for you to distinguish each TinyTimer by this.
+
 
 License
 -------
