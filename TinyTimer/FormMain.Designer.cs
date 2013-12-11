@@ -83,6 +83,10 @@
             this.soundWorker.WorkerSupportsCancellation = true;
             this.soundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.soundWorker_DoWork);
             // 
+            // tipForm
+            // 
+            this.tipForm.ShowAlways = true;
+            // 
             // FormMain
             // 
             this.AcceptButton = this.btnStart;
