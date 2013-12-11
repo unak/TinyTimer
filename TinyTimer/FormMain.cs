@@ -86,7 +86,7 @@ namespace TinyTimer
 
                 if (e.Handled)
                 {
-                    SetTimerText(false);
+                    SetTimerText();
                     btnStart.Focus();
                 }
             }
@@ -200,19 +200,10 @@ namespace TinyTimer
             }
         }
 
-        private void SetTimerText(bool regularize)
-        {
-            lblTimer.ForeColor = timer.IsMinus ? Color.Red : Color.Black;
-            if (regularize)
-            {
-                timer.Regularize();
-            }
-            lblTimer.Text = string.Format("{0}:{1:d2}:{2:d2}", timer.Hours, timer.Minutes, timer.Seconds);
-        }
-
         private void SetTimerText()
         {
-            SetTimerText(true);
+            lblTimer.ForeColor = timer.IsMinus ? Color.Red : Color.Black;
+            lblTimer.Text = string.Format("{0}:{1:d2}:{2:d2}", timer.Hours, timer.Minutes, timer.Seconds);
         }
     }
 }

@@ -37,7 +37,7 @@ namespace TinyTimer
             }
             get
             {
-                return minutes + (!IsMinus && msec > 0 && seconds >= 59 ? 1 : 0);
+                return minutes + (!IsMinus && msec > 0 && seconds >= 59 ? minutes >= 59 ? -59 : 1 : 0);
             }
         }
 
@@ -50,7 +50,7 @@ namespace TinyTimer
             }
             get
             {
-                return seconds + (!IsMinus && msec > 0 ? 1 : 0);
+                return seconds + (!IsMinus && msec > 0 ? seconds >= 59 ? -59 : 1 : 0);
             }
         }
 
@@ -72,6 +72,11 @@ namespace TinyTimer
         public void Start()
         {
             msec = 0;
+            Regularize();
+            if (handler != null)
+            {
+                handler(false);
+            }
             start = DateTime.Now;
             timer.Enabled = true;
         }
