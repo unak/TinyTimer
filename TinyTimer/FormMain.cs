@@ -28,6 +28,7 @@ namespace TinyTimer
                 SetTimerText();
             });
 
+            lblTimer.BackColor = Color.LightGray;
             SetTimerText();
         }
 
@@ -99,12 +100,26 @@ namespace TinyTimer
 
         private void FormMain_Activated(object sender, EventArgs e)
         {
-            lblTimer.BackColor = Color.Yellow;
+            if (timer.Running)
+            {
+                lblTimer.BackColor = Color.Yellow;
+            }
+            else
+            {
+                lblTimer.BackColor = Color.Khaki;
+            }
         }
 
         private void FormMain_Deactivate(object sender, EventArgs e)
         {
-            lblTimer.BackColor = SystemColors.Window;
+            if (timer.Running)
+            {
+                lblTimer.BackColor = SystemColors.Window;
+            }
+            else
+            {
+                lblTimer.BackColor = Color.LightGray;
+            }
         }
 
         private void lblTimer_DoubleClick(object sender, EventArgs e)
@@ -167,6 +182,7 @@ namespace TinyTimer
             {
                 // stopping
                 timer.Stop();
+                lblTimer.BackColor = Color.LightGray;
                 btnStart.Text = "Start";
                 btnStart.BackColor = Color.DeepSkyBlue;
                 soundWorker.CancelAsync();
@@ -177,6 +193,7 @@ namespace TinyTimer
                 SetTimerText();
 
                 timer.Start();
+                lblTimer.BackColor = Color.Yellow;
                 btnStart.Text = "Stop";
                 btnStart.BackColor = Color.OrangeRed;
             }
@@ -185,6 +202,7 @@ namespace TinyTimer
         private void btnReset_Click(object sender, EventArgs e)
         {
             timer.Clear();
+            lblTimer.BackColor = Color.LightGray;
             btnStart.Text = "Start";
             btnStart.BackColor = Color.DeepSkyBlue;
             SetTimerText();
